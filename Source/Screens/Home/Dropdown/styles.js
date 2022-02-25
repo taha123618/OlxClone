@@ -4,9 +4,9 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   dropdown: {
     margin: 16,
-    height: 50,
+    // height: 50,
     borderBottomColor: '#eee',
-    borderBottomWidth: 0.5,
+    // borderBottomWidth: 0.5,
   },
   icon: {
     marginRight: 15,

@@ -82,14 +82,17 @@ const Browser = () => {
   return (
     <ScrollView
       horizontal={true}
-      contentContainerStyle={{marginBottom: 20}}
+      contentContainerStyle={{marginBottom: 15, backgroundColor: '#fff'}}
       showsHorizontalScrollIndicator={false}>
+        {/* <View style={{flexDirection:'row'}}>
+        <Text>Broswer categories</Text>
+        <Text >see All</Text>
+        </View> */}
       {categories.map((category, index) => {
         return (
           <TouchableOpacity
             key={index}
             style={{
-              marginRight: 5,
               width: 100,
               alignItems: 'center',
               justifyContent: 'flex-start',
@@ -97,8 +100,8 @@ const Browser = () => {
             <View
               style={{
                 backgroundColor: category.backgroundColor,
-                width: 80,
-                height: 80,
+                width: 70,
+                height: 70,
                 borderRadius: 100,
                 justifyContent: 'center',
                 alignItems: 'center',
