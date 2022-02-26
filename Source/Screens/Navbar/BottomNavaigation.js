@@ -16,6 +16,8 @@ import MyAds from '../Home/BottomScreens/MyAds';
 import Accounts from '../Home/BottomScreens/Accounts';
 import Email from '../WelcomeScreens/Email/Email';
 
+import images from '../images';
+
 const Tab = createBottomTabNavigator();
 
 const Stack = createStackNavigator();
@@ -79,6 +81,7 @@ const TabNavaigation = () => (
         tabBarIcon: ({focused}) => (
           <AntDesign color="green" size={20} name={focused ? 'home' : 'home'} />
         ),
+        
       }}
     />
     <Tab.Screen

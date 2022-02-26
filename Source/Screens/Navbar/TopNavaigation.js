@@ -1,4 +1,5 @@
 import React from 'react';
+import {Image} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import Home from '../Home/Home';
 
@@ -9,6 +10,8 @@ import Property from '../Home/TopScreens/Property';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+
+import images from '../images';
 
 const TopTab = createMaterialTopTabNavigator();
 
@@ -22,11 +25,12 @@ const TopNavaigation = () => {
           headerShown: false,
           title: 'Home',
           tabBarIcon: ({focused}) => (
-            <AntDesign
-              color="#3474f5"
-              size={20}
-              name={focused ? 'home' : 'home'}
-            />
+            // <AntDesign
+            //   color="#3474f5"
+            //   size={20}
+            //   name={focused ? 'home' : 'home'}
+            // />
+            <Image source={images.logo} style={{width:20, height : 20}}/>
           ),
         }}
       />

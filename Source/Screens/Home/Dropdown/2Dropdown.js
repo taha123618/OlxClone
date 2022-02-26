@@ -19,7 +19,9 @@ const Dropdown2 = () => {
   const [value, setValue] = useState('')
 
   return (
-    <View style={{flex: 1 , backgroundColor:'#fff'}}>
+    <View style={{flex: 1 , 
+    // backgroundColor:'#fff'
+    }}>
       <Dropdown
         style={styles.dropdown}
         placeholderStyle={styles.placeholderStyle}
