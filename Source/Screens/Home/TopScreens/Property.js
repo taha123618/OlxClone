@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   ImageBackground,
   Switch,
+  TextInput,
 } from 'react-native';
 import React, {useState, useCallback} from 'react';
 
@@ -12,23 +13,24 @@ import Cards from '../Cards/Cards';
 import DropdownComponent from '../Dropdown/Dropdown';
 import Dropdown2 from '../Dropdown/2Dropdown';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-// import RangeSlider from 'rn-range-slider';
-// import images from '../../images';
+import RangeSlider from 'rn-range-slider';
 import MultiToggleSwitch from 'react-native-multi-toggle-switch';
 
-const Property = ({props}) => {
-  // const renderThumb = useCallback(() => <Thumb />, []);
-  // const renderRail = useCallback(() => <Rail />, []);
-  // const renderRailSelected = useCallback(() => <RailSelected />, []);
-  // const renderLabel = useCallback(value => <Label text={value} />, []);
-  // const renderNotch = useCallback(() => <Notch />, []);
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
+import styles from '../Dropdown/styles';
+
+const Property = props => {
+  // const [click, setClick] = useState();
+  // const [low, setLow] = useState(0);
+  // const [high, setHigh] = useState(0);
   // const handleValueChange = useCallback((low, high) => {
   //   setLow(low);
   //   setHigh(high);
   // }, []);
 
-  const [click, setClick] = useState();
   // const [isEnabled, setIsEnabled] = useState(false);
+
   // const toggleSwitch = () =>
   // setIsEnabled(previousState => !previousState);
 
@@ -43,25 +45,31 @@ const Property = ({props}) => {
           <View
             style={{
               flexDirection: 'row',
-              // backgroundColor: 'lightblue',
+              backgroundColor: 'lightblue',
               borderRadius: 20,
               padding: 10,
-              width: 130,
+              marginHorizontal: 20,
+              width: 150,
             }}>
             {/* toggle  */}
-            {/* <TouchableOpacity activeOpacity={0.8}>
-              <Text style={{color: '#000', fontWeight: 'bold'}}>Sales</Text>
+            <TouchableOpacity activeOpacity={0.8}>
+              <Text style={{color: '#000', 
+              fontWeight: 'bold',
+              marginEnd:50
+            
+            }}>Sales</Text>
             </TouchableOpacity>
             <TouchableOpacity
               activeOpacity={0.8}
               // onPress={() => setClick(click  , !style={{backgroundColor: '#fff'}}>)}
             >
-              <Text style={{color: '#000', fontWeight: 'bold', marginLeft: 40}}>
+              <Text
+                style={{color: '#000', fontWeight: 'bold'}}>
                 Rent
               </Text>
-            </TouchableOpacity> */}
+            </TouchableOpacity>
 
-            <MultiToggleSwitch >
+            {/* <MultiToggleSwitch >
               <MultiToggleSwitch.Item itemsContainer='green'
                 onPress={() => console.log('Facebook tapped!')} 
                 primaryColor='#eee'>
@@ -72,45 +80,67 @@ const Property = ({props}) => {
                 primaryColor={'#eee'}>
                 <Text style={{color: '#000', fontWeight: 'bold'}}>Rent</Text>
               </MultiToggleSwitch.Item>
-            </MultiToggleSwitch>
-
-            {/* <Switch
-              trackColor={{false: '#767577', true: 'sales'}}
-              thumbColor={isEnabled ? '#f5dd4b' : '#fff'}
-              ios_backgroundColor="#3e3e3e"
-              onValueChange={toggleSwitch}
-              Text={isEnabled ? 'Sales' : 'Rent'}
-              value={isEnabled}
-            /> */}
+            </MultiToggleSwitch> */}
           </View>
 
           {/* 2 */}
           <View>
-            <DropdownComponent />
+            <DropdownComponent
+              style={{}}
+              placeholder="land and plotes"
+              renderLeftIcon={() => (
+                <Ionicons
+                  style={styles.icon}
+                  color="black"
+                  name={'archive-sharp'}
+                  size={25}
+                />
+              )}
+            />
             <Dropdown2 />
           </View>
 
           {/* 3 */}
-          <View>
-            {/* search filter  */}
-            {/* <RangeSlider
-              // style={styles.slider}
+
+          {/* <RangeSlider
+            style={{width: 160, height: 80}}
+            gravity={'center'}
+            min={200}
+            max={1000}
+            step={20}
+            selectionColor="#3df"
+            blankColor="#f618"
+            onValueChanged={(low, high, fromUser) => {
+              // this.setState({rangeLow: low, rangeHigh: high})
+            }}
+          /> */}
+          {/* <View style={{width: 100, height: 100, backgroundColor: '#000'}}> */}
+          {/* search filter  */}
+          {/* <RangeSlider
               style={{width: 160, height: 80}}
-              gravity={'center'}
               min={0}
               max={100}
               step={1}
               selectionColor="#3df"
               blankColor="#f618"
-              floatingLabel
-              // renderThumb={renderThumb}
-              // renderRail={renderRail}
-              // renderRailSelected={renderRailSelected}
-              // renderLabel={renderLabel}
-              // renderNotch={renderNotch}
-              // onValueChanged={handleValueChange}
+              renderThumb={() => (
+                <View style={{backgroundColor:'green'}}>
+
+                </View>
+              )}
+              renderRail={() => (
+                <View style={{flex:1,backgroundColor:'red'}}>
+
+                </View>
+              )}
+              renderRailSelected={() => (
+                <View style={{flex:1, backgroundColor:'yellow'}}>
+
+                </View>
+              )}
+              onValueChanged={handleValueChange}
             /> */}
-          </View>
+          {/* </View> */}
 
           {/* 4 */}
           <View>
@@ -123,6 +153,7 @@ const Property = ({props}) => {
                 justifyContent: 'center',
                 backgroundColor: 'blue',
                 padding: 10,
+                marginHorizontal: 20,
               }}>
               <AntDesign name={'search1'} size={15} color="#fff" />
               <Text
@@ -136,8 +167,8 @@ const Property = ({props}) => {
             </TouchableOpacity>
           </View>
         </View>
-         <Cards />
       </ImageBackground>
+      <Cards />
     </ScrollView>
   );
 };

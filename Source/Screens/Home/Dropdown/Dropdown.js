@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import {Dropdown} from 'react-native-element-dropdown';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+// import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 
 const data = [
@@ -16,7 +16,7 @@ const data = [
   {label: 'taha', value: '9'},
 ];
 
-const DropdownComponent = () => {
+const DropdownComponent = (props) => {
   const [value, setValue] = useState('')
 
   return (
@@ -29,23 +29,16 @@ const DropdownComponent = () => {
         iconStyle={styles.iconStyle}
         data={data}
         search
-        maxHeight={300}
+        maxHeight={500}
         labelField="label"
         valueField="value"
-        placeholder="Karachi, Sindh"
+        placeholder={props.placeholder}
         searchPlaceholder="Search..."
         value={value}
         onChange={item => {
         setValue(item.value);
         }}
-        renderLeftIcon={() => (
-          <Ionicons
-            style={styles.icon}
-            color="black"
-            name ={'ios-location-outline'}
-            size={25}
-          />
-        )}
+        renderLeftIcon={props.renderLeftIcon}
       />
     </View>
   );

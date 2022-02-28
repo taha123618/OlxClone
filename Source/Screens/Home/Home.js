@@ -13,6 +13,10 @@ import Browser from './BrowseCategories/Browser';
 import Dropdown2 from './Dropdown/2Dropdown';
 // import ReactNativeParallaxHeader from 'react-native-parallax-header';
 
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
+import styles from '../Home/Dropdown/styles';
+
 import Cards from './Cards/Cards';
 // import Card from './Cards/Card';
 
@@ -22,18 +26,17 @@ import Cards from './Cards/Cards';
 // const HEADER_HEIGHT = Platform.OS === 'ios' ? (IS_IPHONE_X ? 88 : 64) : 64;
 // const NAV_BAR_HEIGHT = HEADER_HEIGHT - STATUS_BAR_HEIGHT;
 
-
 // const renderContent = () => {
 //   return <DropdownComponent />;
 // };
 
-export default function Home({navigation}) {
+export default function Home({navigation, props}) {
   // for status Bar
   useEffect(() => {
     const unsubscribe = navigation?.addListener?.('focus', () => {
       Platform.OS === 'android' && StatusBar.setTranslucent(true);
       StatusBar.setBarStyle('light-content');
-      StatusBar.setBackgroundColor('#fff')
+      StatusBar.setBackgroundColor('#fff');
     });
     return unsubscribe;
   }, [navigation]);
@@ -43,7 +46,17 @@ export default function Home({navigation}) {
       {/* <ReactNativeParallaxHeader
         renderContent={renderContent}
       /> */}
-      <DropdownComponent />
+      <DropdownComponent
+        placeholder="karachi Sindh"
+        renderLeftIcon={() => (
+          <Ionicons
+            style={styles.icon}
+            color="black"
+            name={'ios-location-outline'}
+            size={25}
+          />
+        )}
+      />
       <Dropdown2 />
       <Browser />
       <Cards />
