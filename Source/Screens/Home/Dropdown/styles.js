@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
   },
   icon: {
     marginRight: 15,
-    fontSize:20,
+    fontSize: 20,
   },
-  icon2 : {
-  marginLeft: 15,
+  icon2: {
+    marginLeft: 15,
   },
   placeholderStyle: {
     fontSize: 15,
@@ -53,6 +53,6 @@ const styles = StyleSheet.create({
   //   height: 40,
   //   fontSize: 16,
   // },
-})
+});
 
 export default styles;

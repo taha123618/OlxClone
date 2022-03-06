@@ -16,8 +16,8 @@ const data = [
   {label: 'taha', value: '9'},
 ];
 
-const DropdownComponent = (props) => {
-  const [value, setValue] = useState('')
+const DropdownComponent = props => {
+  const [value, setValue] = useState('');
 
   return (
     <View style={{flex: 1}}>
@@ -36,7 +36,7 @@ const DropdownComponent = (props) => {
         searchPlaceholder="Search..."
         value={value}
         onChange={item => {
-        setValue(item.value);
+          setValue(item.value);
         }}
         renderLeftIcon={props.renderLeftIcon}
       />
@@ -45,4 +45,3 @@ const DropdownComponent = (props) => {
 };
 
 export default DropdownComponent;
-

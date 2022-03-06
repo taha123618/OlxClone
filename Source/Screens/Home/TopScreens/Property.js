@@ -11,14 +11,14 @@ import React, {useState, useCallback} from 'react';
 
 import Cards from '../Cards/Cards';
 import DropdownComponent from '../Dropdown/Dropdown';
+import styles from '../Dropdown/styles';
 import Dropdown2 from '../Dropdown/2Dropdown';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import RangeSlider from 'rn-range-slider';
 import MultiToggleSwitch from 'react-native-multi-toggle-switch';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
-import styles from '../Dropdown/styles';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const Property = props => {
   // const [click, setClick] = useState();
@@ -38,7 +38,7 @@ const Property = props => {
     <ScrollView contentContainerStyle={{flexGrow: 1}}>
       <ImageBackground
         source={require('../../../assets/images/city.jpg')}
-        imageStyle={{width: 500, height: 370, backfaceVisibility: 'visible'}}
+        imageStyle={{width: 500, height: 320, backfaceVisibility: 'visible'}}
         style={{flex: 1}}>
         <View style={{flex: 1, paddingHorizontal: 30, paddingVertical: 30}}>
           {/* 1 */}
@@ -53,20 +53,12 @@ const Property = props => {
             }}>
             {/* toggle  */}
             <TouchableOpacity activeOpacity={0.8}>
-              <Text style={{color: '#000', 
-              fontWeight: 'bold',
-              marginEnd:50
-            
-            }}>Sales</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              activeOpacity={0.8}
-              // onPress={() => setClick(click  , !style={{backgroundColor: '#fff'}}>)}
-            >
-              <Text
-                style={{color: '#000', fontWeight: 'bold'}}>
-                Rent
+              <Text style={{color: '#000', fontWeight: 'bold', marginEnd: 50}}>
+                Sales
               </Text>
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.8}>
+              <Text style={{color: '#000', fontWeight: 'bold'}}>Rent</Text>
             </TouchableOpacity>
 
             {/* <MultiToggleSwitch >
@@ -86,18 +78,27 @@ const Property = props => {
           {/* 2 */}
           <View>
             <DropdownComponent
-              style={{}}
               placeholder="land and plotes"
               renderLeftIcon={() => (
-                <Ionicons
+                <MaterialIcons
                   style={styles.icon}
                   color="black"
-                  name={'archive-sharp'}
+                  name={'location-city'}
                   size={25}
                 />
               )}
             />
-            <Dropdown2 />
+            <Dropdown2
+              placeholder="Select Location"
+              renderRightIcon={() => (
+                <Ionicons
+                  style={styles.icon}
+                  color="black"
+                  name={'md-location-outline'}
+                  size={25}
+                />
+              )}
+            />
           </View>
 
           {/* 3 */}
@@ -143,6 +144,7 @@ const Property = props => {
           {/* </View> */}
 
           {/* 4 */}
+          {/* button */}
           <View>
             <TouchableOpacity
               activeOpacity={0.8}
@@ -167,8 +169,32 @@ const Property = props => {
             </TouchableOpacity>
           </View>
         </View>
+
+        <Text
+          style={{
+            paddingHorizontal: 15,
+            marginTop: 10,
+            fontWeight: 'bold',
+            color: '#000',
+          }}>
+          Featured Properties For Sale
+        </Text>
+        <Cards
+          horizontal={true}
+          contentContainerStyle={{marginTop: 30}}
+          backgroundColor={'white'}
+        />
+        <Text
+          style={{
+            paddingHorizontal: 15,
+            marginTop: 10,
+            fontWeight: 'bold',
+            color: '#000',
+          }}>
+          Featured Properties For Rent
+        </Text>
+        <Cards horizontal={true} backgroundColor={'white'} icon={false} />
       </ImageBackground>
-      <Cards />
     </ScrollView>
   );
 };

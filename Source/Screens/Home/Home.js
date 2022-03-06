@@ -14,6 +14,7 @@ import Dropdown2 from './Dropdown/2Dropdown';
 // import ReactNativeParallaxHeader from 'react-native-parallax-header';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 import styles from '../Home/Dropdown/styles';
 
@@ -57,9 +58,14 @@ export default function Home({navigation, props}) {
           />
         )}
       />
-      <Dropdown2 />
+      <Dropdown2
+        placeholder="Find Cars, Mobile Phones and more"
+        renderRightIcon={() => (
+          <Entypo style={styles.icon} color="black" name={'bell'} size={25} />
+        )}
+      />
       <Browser />
-      <Cards />
+      <Cards numColumns={2} backgroundColor={'lightgreen'}/>
       {/* <Card /> */}
     </ScrollView>
   );

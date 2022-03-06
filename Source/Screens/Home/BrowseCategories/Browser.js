@@ -8,7 +8,7 @@ const categories = [
     name: 'Mobile',
     backgroundColor: 'green',
     fontSize: 40,
-    icon: <Feather name="smartphone" size={30} />,
+    icon: <Feather name="home" size={30} />,
   },
   {
     name: 'Vechicles',
@@ -23,68 +23,69 @@ const categories = [
   {
     name: 'Property for Rent',
     backgroundColor: '#4565f5',
-    icon: <AntDesign name="cancel" size={30} />,
+    icon: <AntDesign name="creditcard" size={30} />,
   },
   {
     name: 'Electronics & Home Appliance',
     backgroundColor: 'red',
-    icon: <AntDesign name="cancel" size={30} />,
+    icon: <AntDesign name="bars" size={30} />,
   },
   {
     name: 'Bikes',
     backgroundColor: 'purple',
-    icon: <AntDesign name="cancel" size={30} />,
+    icon: <AntDesign name="frown" size={30} />,
   },
   {
     name: 'Business',
     backgroundColor: 'brown',
-    icon: <AntDesign name="cancel" size={30} />,
+    icon: <AntDesign name="mail" size={30} />,
   },
   {
     name: 'Services',
     backgroundColor: 'yellow',
-    icon: <AntDesign name="cancel" size={30} />,
+    icon: <AntDesign name="linechart" size={30} />,
   },
   {
     name: 'Jobs',
     backgroundColor: 'yellow',
-    icon: <AntDesign name="cancel" size={30} />,
+    icon: <AntDesign name="videocamera" size={30} />,
   },
   {
     name: 'Animals',
     backgroundColor: 'yellow',
-    icon: <AntDesign name="cancel" size={30} />,
+    icon: <AntDesign name="setting" size={30} />,
   },
   {
     name: 'Furnuture',
     backgroundColor: 'yellow',
     fontSize: 20,
-    icon: <AntDesign name="cancel" size={30} />,
+    icon: <AntDesign name="qrcode" size={30} />,
   },
   {
     name: 'Fashion & Beauty',
     backgroundColor: 'yellow',
-    icon: <AntDesign name="cancel" size={30} />,
+    icon: <AntDesign name="lock" size={30} />,
   },
   {
     name: 'Books Sport & Hobbies',
     backgroundColor: 'yellow',
-    icon: <AntDesign name="cancel" size={30} />,
+    icon: <AntDesign name="camerao" size={30} />,
   },
   {
     name: 'Kids',
     backgroundColor: 'red',
-    icon: <AntDesign name="cancel" size={30} />,
+    icon: <AntDesign name="dingding-o" size={30} />,
   },
 ];
 
 const Browser = () => {
   return (
     <ScrollView
+      // key={'scrollView'}
       horizontal={true}
-      contentContainerStyle={{marginBottom: 15, backgroundColor: '#fff'}}
+      contentContainerStyle={{marginBottom: 15}}
       showsHorizontalScrollIndicator={false}>
-        {/* <View style={{flexDirection:'row'}}>
+      {/* <View style={{flexDirection:'row'}}>
         <Text>Broswer categories</Text>
         <Text >see All</Text>
         </View> */}

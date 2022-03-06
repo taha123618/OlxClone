@@ -5,7 +5,7 @@ import images from '../images';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 
-const Welcome = ({}) => {
+const Welcome = (props) => {
   const navigation = useNavigation();
   return (
     <ScrollView
