@@ -1,4 +1,4 @@
-// for drawer or renamaited wrap the whole file 
+// for drawer or re_animate wrap the whole file
 import 'react-native-gesture-handler';
 import {AppRegistry} from 'react-native';
 import App from './App';
