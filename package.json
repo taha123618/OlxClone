@@ -29,6 +29,7 @@
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.11.0",
     "react-native-splash-screen": "^3.3.0",
+    "react-native-svg": "^13.6.0",
     "react-native-tab-view": "^3.1.1",
     "react-native-vector-icons": "^9.0.0",
     "rn-range-slider": "^2.1.1"

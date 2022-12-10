@@ -45,11 +45,11 @@ const MainNavaigation = () => {
         component={Email}
         // options={{headerShown: false}}
       />
-        <Stack.Screen
-          name="Phone"
-          component={Phone}
-          // options={{headerShown: false}}
-        />
+      <Stack.Screen
+        name="Phone"
+        component={Phone}
+        // options={{headerShown: false}}
+      />
       <Stack.Screen
         name="Verification"
         component={Verification}

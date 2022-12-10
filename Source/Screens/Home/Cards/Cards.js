@@ -7,7 +7,7 @@ import {
   ScrollView,
   Dimensions,
 } from 'react-native';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, memo} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import images from '../../images';
 
@@ -15,9 +15,11 @@ import images from '../../images';
 const {width} = Dimensions.get('window');
 const Itemwidth = (width - 10 * 2) / 2;
 
-const Cards = (props) => {
+const Cards = props => {
   const [showPass, setShowPass] = useState(false);
-  useEffect(() => {}, []);
+  useEffect(() => {
+    alert('Cards');
+  }, []);
 
   return (
     <ScrollView>
@@ -34,7 +36,6 @@ const Cards = (props) => {
           renderItem={({index, item}) => (
             <View
               style={{
-    
                 backgroundColor: props.backgroundColor,
                 width: Itemwidth - 10,
                 marginTop: 10,
@@ -81,4 +82,4 @@ const Cards = (props) => {
   );
 };
 
-export default Cards;
+export default memo(Cards);
